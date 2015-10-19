@@ -10,4 +10,15 @@ public class Discount {
     public Discount(int numberOfUniqueBooks) {
         this.numberOfBooks = numberOfUniqueBooks;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Discount discount = (Discount) o;
+
+        return numberOfBooks == discount.numberOfBooks;
+
+    }
 }

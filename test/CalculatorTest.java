@@ -108,7 +108,26 @@ public class CalculatorTest {
                 new Book(Title.Book_FIVE));
         Calculator calculator = new Calculator(new Order(books));
 
-        String discountedPrice = "51.60";
+        String discountedPrice = "51.20";
+        assertThat(calculator.calculateTotal(), is(discountedPrice));
+    }
+
+    @Test
+    public void shouldOptimizeOrderForThreeDiscounts() throws Exception {
+        List<Book> books = newArrayList(
+                new Book(Title.BOOK_ONE),
+                new Book(Title.BOOK_ONE),
+                new Book(Title.BOOK_ONE),
+                new Book(Title.BOOK_TWO),
+                new Book(Title.BOOK_TWO),
+                new Book(Title.BOOK_THREE),
+                new Book(Title.BOOK_THREE),
+                new Book(Title.BOOK_FOUR),
+                new Book(Title.BOOK_FOUR),
+                new Book(Title.Book_FIVE));
+        Calculator calculator = new Calculator(new Order(books));
+
+        String discountedPrice = "68.80";
         assertThat(calculator.calculateTotal(), is(discountedPrice));
 
     }
