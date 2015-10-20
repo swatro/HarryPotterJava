@@ -12,7 +12,7 @@ public class CalculatorTest {
     public void shouldCostEightEurosForABook() throws Exception {
         Calculator calculator = new Calculator(new Order(newArrayList(new Book(Title.BOOK_ONE))));
 
-        String eightEuros = "8.00";
+        String eightEuros = "9.00";
         assertThat(calculator.calculateTotal(), is(eightEuros));
     }
 
